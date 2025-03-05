@@ -10,7 +10,7 @@ import com.crm.objectrepository.Homepage;
 public class campaignTest extends Basetest{
 	
 
-	@Test
+	@Test(groups ="smoke")
 	public void navigatetoCampaignPageTest() throws IOException {	
 		Homepage hp = new Homepage(driver);
 		hp.navigateTocampaignpage();

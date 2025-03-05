@@ -20,7 +20,7 @@ public class OrganizationmoduleTest extends Basetest {
 
 //
 
-	@Test
+	@Test(groups ="smoke")
 	public void CreateOrgwithPhonenumTest(Method test) throws IOException {
 		String orgname = "fhfd47785" + jutil.getRandomNumber();
 		String mobnum = eutil.getDtaFromExcel("sheet2", 5, 3);
@@ -40,7 +40,7 @@ public class OrganizationmoduleTest extends Basetest {
 		Reporter.log(test.getName() + " verified==pass", true);
 	}
 
-	@Test
+	@Test (groups ="regression")
 	public void CreateOrgwithIndustryTest(Method test) throws IOException {
 		String orgname = "fhfd47785" + jutil.getRandomNumber();
 		String industryName = eutil.getDtaFromExcel("sheet2", 3, 3);
@@ -63,21 +63,21 @@ public class OrganizationmoduleTest extends Basetest {
 	}
 
 
-	@Test
+	@Test (groups ="regression")
 	public void verifylogoTest(Method test) throws IOException, InterruptedException {
 		Homepage hp = new Homepage(driver);
 		Assert.assertTrue(hp.getApplogo().isDisplayed());
 		Reporter.log(test.getName() + " verified==pass", true);
 	}
 	
-	@Test
+	@Test (groups ="regression")
 	public void tc_01Test(Method test)  {
 		Homepage hp = new Homepage(driver);
 		Assert.assertTrue(hp.getApplogo().isDisplayed());
 		Reporter.log(test.getName() + " verified==pass", true);
 	}
 	
-	@Test
+	@Test (groups ="regression")
 	public void tc_02Test(Method test)  {
 		Homepage hp = new Homepage(driver);
 		Assert.assertTrue(hp.getApplogo().isDisplayed());

@@ -31,11 +31,10 @@ public class Basetest {
 	public JavaUtility jutil = new JavaUtility();
 	public PropFileutility putil = new PropFileutility();
 	public WebdriverUtility wutil = new WebdriverUtility();
-//	public static ExtentReports report;
 	
 
 
-	@BeforeMethod 
+	@BeforeMethod (alwaysRun =true )
 	public void configBM() throws IOException {
 		String url = putil.getDataFromPropertyfile("url");
 		String username = putil.getDataFromPropertyfile("username");
@@ -44,13 +43,13 @@ public class Basetest {
 		lp.login(url, username, pwd);
 	}
 
-	@AfterMethod 
+	@AfterMethod (alwaysRun =true )
 	public void configAM() {
 		Homepage hp = new Homepage(driver);
 		hp.logout();
 	}
 	
-	@BeforeClass 
+	@BeforeClass (alwaysRun =true )
 	public void configBC( ) throws IOException {
 		String Browsername = putil.getDataFromPropertyfile("browser");
 
@@ -66,19 +65,19 @@ public class Basetest {
 
 	}
 
-	@AfterClass
+	@AfterClass (alwaysRun =true )
 	public void configAC() {
 		driver.quit();
 	}
 
-	@BeforeSuite 
+	@BeforeSuite  (alwaysRun =true )
 	public void configAS() throws SQLException {
 //		dutil.getconnectionToDB();
 		System.out.println("DB connection done");
 	
 	}
 	
-	@AfterSuite (groups={"regression" ,"smoke"},alwaysRun =true)
+	@AfterSuite (alwaysRun =true)
 	public void configBS() throws SQLException {	
 		System.out.println("DB connection closed");
 
