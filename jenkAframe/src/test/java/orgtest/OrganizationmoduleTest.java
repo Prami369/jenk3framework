@@ -69,5 +69,12 @@ public class OrganizationmoduleTest extends Basetest {
 		Assert.assertTrue(hp.getApplogo().isDisplayed());
 		Reporter.log(test.getName() + " verified==pass", true);
 	}
+	
+	@Test
+	public void tc_01Test(Method test)  {
+		Homepage hp = new Homepage(driver);
+		Assert.assertTrue(hp.getApplogo().isDisplayed());
+		Reporter.log(test.getName() + " verified==pass", true);
+	}
 
 }
