@@ -21,7 +21,7 @@ public class OrganizationmoduleTest extends Basetest {
 //
 
 	@Test
-	public void CreateOrgwithPhonenum(Method test) throws IOException {
+	public void CreateOrgwithPhonenumTest(Method test) throws IOException {
 		String orgname = "fhfd47785" + jutil.getRandomNumber();
 		String mobnum = eutil.getDtaFromExcel("sheet2", 5, 3);
 
@@ -41,7 +41,7 @@ public class OrganizationmoduleTest extends Basetest {
 	}
 
 	@Test
-	public void CreateOrgwithIndustry(Method test) throws IOException {
+	public void CreateOrgwithIndustryTest(Method test) throws IOException {
 		String orgname = "fhfd47785" + jutil.getRandomNumber();
 		String industryName = eutil.getDtaFromExcel("sheet2", 3, 3);
 		String industrytype = eutil.getDtaFromExcel("sheet2", 3, 4);
@@ -64,7 +64,7 @@ public class OrganizationmoduleTest extends Basetest {
 
 
 	@Test
-	public void verifylogo(Method test) throws IOException, InterruptedException {
+	public void verifylogoTest(Method test) throws IOException, InterruptedException {
 		Homepage hp = new Homepage(driver);
 		Assert.assertTrue(hp.getApplogo().isDisplayed());
 		Reporter.log(test.getName() + " verified==pass", true);
