@@ -36,7 +36,7 @@ public class Basetest {
 
 	@BeforeMethod (alwaysRun =true )
 	public void configBM() throws IOException {
-		String url = putil.getDataFromPropertyfile("url");
+		String url = System.getProperty("url", putil.getDataFromPropertyfile("url"));
 		String username = putil.getDataFromPropertyfile("username");
 		String pwd = putil.getDataFromPropertyfile("password");
 		Loginpage lp = new Loginpage(driver);
@@ -51,7 +51,7 @@ public class Basetest {
 	
 	@BeforeClass (alwaysRun =true )
 	public void configBC( ) throws IOException {
-		String Browsername = putil.getDataFromPropertyfile("browser");
+		String Browsername = System.getProperty("browser", putil.getDataFromPropertyfile("browser"));
 
 		if (Browsername.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
@@ -59,10 +59,8 @@ public class Basetest {
 			driver = new FirefoxDriver();
 		}else if (Browsername.equalsIgnoreCase("edge")) {
 			driver = new EdgeDriver();
-		}
-		
+		}	
 		driver.manage().window().maximize();	
-
 	}
 
 	@AfterClass (alwaysRun =true )

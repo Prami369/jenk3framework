@@ -19,7 +19,13 @@ public class campaignTest extends Basetest{
 	@Test
 	public void tc_01Test() throws IOException {	
 		Homepage hp = new Homepage(driver);
-		hp.navigateTocampaignpage();
-		
+		hp.navigateTocampaignpage();		
 }
+	
+//	@Test
+//	public void tc_02Test() throws IOException {	
+//		Homepage hp = new Homepage(driver);
+//		hp.navigateTocampaignpage();
+//		
+//}
 }
